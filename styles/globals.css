@@ -28,8 +28,12 @@ input {
   border: none;
 }
 
+.auth-form {
+  border: 1px solid #cccccc;
+}
+
 .input-wrapper {
-  border: 1px solid #aaa9a9;
+  border: 1px solid #cccccc;
 }
 
 .input-name {
@@ -64,6 +68,17 @@ input {
 
 .input-wrapper.focus {
   border: 1px solid #868585;
+}
+
+.auth-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #868585;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 @media (prefers-color-scheme: dark) {
