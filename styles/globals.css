@@ -94,6 +94,18 @@ input {
   transition: all 0.2s ease;
 }
 
+.sidebar {
+  border-right: 1px solid #ccc;
+}
+
+.sidebar-burger img {
+  transition: all 0.2s ease;
+}
+
+.sidebar-burger:hover img {
+  transform: scale(1.1);
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline
