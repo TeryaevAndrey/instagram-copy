@@ -87,6 +87,17 @@ input {
   }
 }
 
+@media(max-width: 450px) {
+  body {
+    background-color: #fff;
+  }
+
+  .auth-form {
+    border: none;
+    width: 100%;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

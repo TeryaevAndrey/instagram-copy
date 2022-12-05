@@ -5,9 +5,9 @@ import LoginForm from "../../components/Auth/LoginForm";
 
 const login: FC = () => {
   return (
-    <div className="h-[100vh] flex flex-col items-center justify-center">
-      <div className="flex gap-4 justify-center items-center">
-        <div className="relative w-[380px] h-[580px] bg-[url('/logTel.png')] bg-no-repeat bg-cover bg-center">
+    <div className="min-h-[100vh] flex flex-col items-center justify-center">
+      <div className="flex gap-4 justify-center items-center mt-auto">
+        <div className="relative w-[380px] h-[580px] bg-[url('/logTel.png')] bg-no-repeat bg-cover bg-center hidden lg:flex">
           <Image
             className="absolute right-[30px] bottom-[60px]"
             src="/logTelBg.png"
@@ -56,7 +56,7 @@ const login: FC = () => {
         </div>
       </div>
 
-      <footer className="flex flex-col items-center mt-[110px]">
+      <footer className="flex flex-col items-center mb-[60px] mt-[50px] lg:mt-auto">
         <LinkList />
         <div className="flex items-center gap-4 mt-3">
           <span className="text-[12px] text-[#8E8E8E]">Русский</span>

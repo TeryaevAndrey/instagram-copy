@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 const LinkList: FC = () => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 flex-wrap justify-center">
       <a className="auth-footer-link" href="#">
         Meta
       </a>
