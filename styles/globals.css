@@ -81,6 +81,12 @@ input {
   z-index: 1;
 }
 
+@layer components {
+  .auth-footer-link {
+    @apply text-[12px] text-[#8E8E8E] hover:underline
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
