@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
+import DownloadApp from "../../components/Auth/DownloadApp";
+import Footer from "../../components/Auth/Footer";
 import LinkList from "../../components/Auth/LinkList";
 import LoginForm from "../../components/Auth/LoginForm";
 
@@ -21,50 +24,19 @@ const login: FC = () => {
           <div className="auth-form bg-[#fff] flex items-center px-[25px] py-[20px] rounded-[1px] mt-3">
             <p className="text-[14px] text-[#262626]">
               У вас ещё нет аккаунта?
-              <a
+              <Link
                 className="ml-1 text-[14px] text-[#0095F6] font-semibold"
-                href="#"
+                href="/auth/reg"
               >
                 Зарегистрироваться
-              </a>
+              </Link>
             </p>
           </div>
-          <div className="flex flex-col items-center mt-5">
-            <span className="text-[14px] text-[#262626]">
-              Установите приложение
-            </span>
-            <div className="mt-5 flex items-center gap-2">
-              <a className="w-[110px] h-[40px] flex items-center" href="#">
-                <Image
-                  className="h-[40px]"
-                  src="/google-download.png"
-                  alt="google"
-                  width="110"
-                  height="40"
-                />
-              </a>
-              <a className="w-[110px] h-[40px] flex items-center" href="#">
-                <Image
-                  src="/microsoft-download.png"
-                  alt="microsoft"
-                  width="110"
-                  height="40"
-                />
-              </a>
-            </div>
-          </div>
+          <DownloadApp />
         </div>
       </div>
 
-      <footer className="flex flex-col items-center mb-[60px] mt-[50px] lg:mt-auto">
-        <LinkList />
-        <div className="flex items-center gap-4 mt-3">
-          <span className="text-[12px] text-[#8E8E8E]">Русский</span>
-          <span className="text-[12px] text-[#8E8E8E]">
-            © 2022 Instagram from Meta
-          </span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
