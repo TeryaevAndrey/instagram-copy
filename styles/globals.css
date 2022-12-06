@@ -114,6 +114,14 @@ input {
   transform: scale(1.1);
 }
 
+.stories-block {
+  border: 1px solid #ccc;
+}
+
+.stories-item-wrapper {
+  background: linear-gradient(90deg, rgba(123,18,187,1) 32%, rgba(218,14,113,1) 72%);
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline

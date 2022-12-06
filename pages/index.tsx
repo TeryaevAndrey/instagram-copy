@@ -1,10 +1,13 @@
 import Sidebar from "../components/Sidebar/Sidebar";
+import Stories from "../components/Sidebar/Stories/Stories";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex items-start">
       <Sidebar />
-      <div></div>
+      <div className="flex justify-end items-start ml-auto">
+        <Stories />
+      </div>
     </div>
   )
 }
