@@ -122,6 +122,24 @@ input {
   background: linear-gradient(90deg, rgba(123,18,187,1) 32%, rgba(218,14,113,1) 72%);
 }
 
+.post {
+  border: 1px solid #ccc;
+}
+
+.post-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-icon path {
+  transition: all 0.2s ease;
+}
+
+.post-icon.like:hover path {
+  fill: red;
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline

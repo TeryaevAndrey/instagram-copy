@@ -1,3 +1,4 @@
+import Posts from "../components/Sidebar/Posts/Posts";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Stories from "../components/Sidebar/Stories/Stories";
 
@@ -5,8 +6,14 @@ const Home = () => {
   return (
     <div className="flex items-start">
       <Sidebar />
-      <div className="flex justify-end items-start ml-auto">
-        <Stories />
+      <div className="w-[80%] ml-auto">
+        <div className="flex justify-center items-start gap-5 mx-auto mt-10">
+          <div className="flex flex-col">
+            <Stories />
+            <Posts />
+          </div>
+          <div className="w-[320px]"></div>
+        </div>
       </div>
     </div>
   )
