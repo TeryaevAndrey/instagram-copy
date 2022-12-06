@@ -7,7 +7,7 @@ const Home = () => {
     <div className="flex items-start">
       <Sidebar />
       <div className="w-[80%] ml-auto">
-        <div className="flex justify-center items-start gap-5 mx-auto mt-10">
+        <div className="flex justify-center items-start gap-5 mx-auto mt-7">
           <div className="flex flex-col">
             <Stories />
             <Posts />
