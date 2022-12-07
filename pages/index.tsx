@@ -1,4 +1,5 @@
 import Posts from "../components/Posts/Posts";
+import ProfileBlock from "../components/ProfileBlock/ProfileBlock";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Stories from "../components/Stories/Stories";
 
@@ -12,7 +13,7 @@ const Home = () => {
             <Stories />
             <Posts />
           </div>
-          <div className="w-[320px]"></div>
+          <ProfileBlock />
         </div>
       </div>
     </div>

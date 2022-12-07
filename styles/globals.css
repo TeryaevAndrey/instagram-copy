@@ -144,6 +144,22 @@ input {
   border-top: 1px solid #ccc;
 }
 
+.profileBlock-link {
+  position: relative;
+}
+
+.profileBlock-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 2px;
+  background-color: #C7C7C7;
+  border-radius: 50%;
+  right: -7px;
+  top: 50%;
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline
