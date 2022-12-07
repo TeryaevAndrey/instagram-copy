@@ -140,6 +140,10 @@ input {
   fill: red;
 }
 
+.post-footer {
+  border-top: 1px solid #ccc;
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline

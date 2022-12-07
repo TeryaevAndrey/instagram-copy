@@ -1,6 +1,6 @@
-import Posts from "../components/Sidebar/Posts/Posts";
+import Posts from "../components/Posts/Posts";
 import Sidebar from "../components/Sidebar/Sidebar";
-import Stories from "../components/Sidebar/Stories/Stories";
+import Stories from "../components/Stories/Stories";
 
 const Home = () => {
   return (

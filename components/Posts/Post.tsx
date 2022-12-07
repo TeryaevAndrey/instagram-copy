@@ -54,6 +54,11 @@ const Post: FC = () => (
       </p>
       <span className="text-[14px] text-[#8E8E8E] mt-2 cursor-pointer">Посмотреть все комментарии (6)</span>
       <span className="mt-2 text-[14px] text-[#8E8E8E]">1 час назад</span>
+      <div className="post-footer flex items-center mt-3 pt-4">
+        <Image src="/smile.svg" alt="smile" width="24" height="24" />
+        <input className="mx-4 w-[100%] placeholder:text-[14px]" type="text" placeholder="Добавьте комментарий..." />
+        <button className="text-[#0095F6] opacity-60 text-[14px] font-semibold bg-transparent">Опубликовать</button>
+      </div>
     </div>
   </div>
 );
