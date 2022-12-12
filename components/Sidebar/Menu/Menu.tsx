@@ -26,7 +26,6 @@ const Menu: FC = () => {
         <MenuItem img={BiMessageSquareAdd} title="Создать" />
         <Profile />
       </div>
-      <SidebarBurger style={{marginTop: "100%"}} />
     </>
   );
 };

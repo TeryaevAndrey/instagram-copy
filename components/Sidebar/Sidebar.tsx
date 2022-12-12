@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC } from 'react';
+import SidebarBurger from './Burger/SidebarBurger';
 import Menu from './Menu/Menu';
 
 const Sidebar: FC = () => {
@@ -10,6 +11,7 @@ const Sidebar: FC = () => {
         <Image src="/instaIcon.svg" alt="instagram" width="110" height="40" />
       </Link>
       <Menu />
+      <SidebarBurger style={{marginTop: "100px", marginLeft: "0.75rem"}}/>
     </div>
   );
 };
