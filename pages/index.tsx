@@ -1,3 +1,4 @@
+import React from "react";
 import Posts from "../components/Posts/Posts";
 import ProfileBlock from "../components/ProfileBlock/ProfileBlock";
 import Sidebar from "../components/Sidebar/Sidebar";

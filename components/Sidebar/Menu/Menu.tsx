@@ -8,7 +8,6 @@ import { BiMessageSquareDetail } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiMessageSquareAdd } from "react-icons/bi";
 import Profile from "./Profile";
-import SidebarBurger from "../Burger/SidebarBurger";
 
 const Menu: FC = () => {
   return (
