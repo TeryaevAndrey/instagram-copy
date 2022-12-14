@@ -11,7 +11,7 @@ const Sidebar: FC = () => {
         <Image src="/instaIcon.svg" alt="instagram" width="110" height="40" />
       </Link>
       <Menu />
-      <SidebarBurger style={{marginTop: "100px", marginLeft: "0.75rem"}}/>
+      <SidebarBurger />
     </div>
   );
 };
