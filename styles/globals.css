@@ -168,6 +168,31 @@ input {
   border: 1px solid #ccc;
 }
 
+.profile-tabs {
+  border-top: 1px solid #ccc;
+}
+
+.profile-tab.active {
+  border-top: 1px solid #000;
+  color: #262626;
+}
+
+.post-wrapper::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.post-hover {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
+}
+
+.post-wrapper:hover .post-hover {
+  opacity: 1;
+}
+
 @layer components {
   .auth-footer-link {
     @apply text-[12px] text-[#8E8E8E] hover:underline
@@ -179,6 +204,18 @@ input {
 
   .profile-header-number {
     @apply font-semibold mr-1
+  }
+
+  .profile-tab {
+    @apply flex items-center gap-2 text-[12px] text-[#8E8E8E] font-semibold uppercase py-4 cursor-pointer tracking-[1px]
+  }
+
+  .post-wrapper {
+    @apply flex relative max-w-[277px] w-[100%] h-auto bg-[#ccc]
+  }
+
+  .post-hover {
+    @apply absolute top-0 bottom-0 left-0 right-0 w-[100%] h-[100%];
   }
 }
 

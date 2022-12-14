@@ -1,5 +1,6 @@
 import { FC } from "react";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
+import ProfilePosts from "../../components/Profile/ProfilePosts";
 import ProfileStories from "../../components/Profile/ProfileStories";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
@@ -12,6 +13,7 @@ const Profile: FC = () => {
           <div className="flex flex-col">
             <ProfileHeader />
             <ProfileStories />
+            <ProfilePosts />
           </div>
         </div>
       </div>
