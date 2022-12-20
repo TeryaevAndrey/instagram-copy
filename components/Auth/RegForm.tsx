@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
+import { IUser } from '../../types';
 import AuthInput from './AuthInput';
 
 const RegForm: FC = () => {
-  const [emailValue, setEmailValue] = React.useState<string>("");
+  const [contact, setContact] = React.useState<string>("");
   const [realName, setRealName] = React.useState<string>("");
   const [userName, setUserName] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
 
-  const changeEmailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailValue(e.target.value);
+  const changeContactHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContact(e.target.value);
   }
 
   const changeRealNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +29,14 @@ const RegForm: FC = () => {
     e.preventDefault();
 
     try {
-      
+      if(contact && realName && userName && password) {
+        const readyData: IUser = {
+          contact,
+          realName, 
+          userName,
+          password
+        };
+      }
     } catch(err: any) {
       console.log(err);
     }
@@ -55,8 +63,8 @@ const RegForm: FC = () => {
       <div className="flex flex-col gap-3">
         <AuthInput
           title="Моб. телефон или эл. адрес"
-          onChange={changeEmailHandler}
-          value={emailValue}
+          onChange={changeContactHandler}
+          value={contact}
         />
 
         <AuthInput
