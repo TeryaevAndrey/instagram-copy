@@ -3,19 +3,11 @@ import mongoose from "mongoose";
 let Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  tel: {
-    type: String,
-    required: false
-  },
-  email: {
-    type: String,
-    required: false
-  },
-  firstName: {
+  contact: {
     type: String,
     required: true
   },
-  secondName: {
+  realName: {
     type: String,
     required: true
   },

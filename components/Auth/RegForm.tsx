@@ -24,6 +24,16 @@ const RegForm: FC = () => {
     setPassword(e.target.value);
   }
 
+  const formHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    try {
+      
+    } catch(err: any) {
+      console.log(err);
+    }
+  }
+
   return (
     <form className="auth-form bg-[#fff] flex flex-col items-center pb-7 px-[40px] rounded-[1px] max-w-[347px]">
       <Image src="/instaIcon.svg" alt="instagram" width="130" height="50" />
@@ -77,6 +87,7 @@ const RegForm: FC = () => {
       </p>
 
       <button
+        onClick={formHandler}
         className="w-[100%] max-w-[258px] min-h-[30px] py-[5px] px-[9px] bg-[#0095f6] rounded-[3px] mt-3 text-white text-[14px] font-semibold"
         type="submit"
       >
