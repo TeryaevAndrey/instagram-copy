@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import DownloadApp from "../../components/Auth/DownloadApp";
 import Footer from "../../components/Auth/Footer";
 import RegForm from "../../components/Auth/RegForm";
 
-const reg: FC = () => {
+const Reg: FC = () => {
   return (
     <div className="flex flex-col items-center mt-3">
       <RegForm />
@@ -26,4 +25,4 @@ const reg: FC = () => {
   );
 };
 
-export default reg;
+export default Reg;

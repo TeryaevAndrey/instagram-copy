@@ -1,7 +1,10 @@
 import bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
+import connectDb from "../../middleware/mongoDb";
 import User from "../../models/User";
 import { IUser } from "../../types";
+
+connectDb();
 
 const handler = async(req: NextApiRequest, res: NextApiResponse) => {
   if(req.method === "POST") {

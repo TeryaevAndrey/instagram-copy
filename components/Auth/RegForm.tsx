@@ -1,9 +1,19 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
+import { useHttp } from '../../hooks/http.hook';
 import { IUser } from '../../types';
 import AuthInput from './AuthInput';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { changeIsError } from '../../store/regSlice';
+import Loader from '../Loader/Loader';
+import { useRouter } from 'next/router';
 
 const RegForm: FC = () => {
+  const {request, loading} = useHttp(); 
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const error = useAppSelector(state => state.reg.error);
+
   const [contact, setContact] = React.useState<string>("");
   const [realName, setRealName] = React.useState<string>("");
   const [userName, setUserName] = React.useState<string>("");
@@ -30,15 +40,28 @@ const RegForm: FC = () => {
 
     try {
       if(contact && realName && userName && password) {
+
         const readyData: IUser = {
           contact,
           realName, 
           userName,
           password
         };
+
+        await request("/api/regUser", "POST", readyData);
+
+        router.push("/auth/login");
+      } else {
+        dispatch(changeIsError({
+          isError: true, 
+          message: "Вы ввели не все данные"
+        }));
       }
     } catch(err: any) {
-      console.log(err);
+      dispatch(changeIsError({
+        isError: true,
+        message: "Что-то пошло не так"
+      }));
     }
   }
 
@@ -86,6 +109,10 @@ const RegForm: FC = () => {
         />
       </div>
 
+      {
+        error.isError && <p className="text-[16px] text-red-600 text-center max-w-[265px] mt-3">{error.message}</p>
+      }
+
       <p className="text-[12px] text-[#8E8E8E] text-center max-w-[265px] mt-3">
         Люди, которые пользуются нашим сервисом, могли загрузить вашу контактную информацию в Instagram. <a className="text-[12px] font-semibold text-[#8E8E8E]" href="#">Подробнее</a>
       </p>
@@ -96,10 +123,13 @@ const RegForm: FC = () => {
 
       <button
         onClick={formHandler}
-        className="w-[100%] max-w-[258px] min-h-[30px] py-[5px] px-[9px] bg-[#0095f6] rounded-[3px] mt-3 text-white text-[14px] font-semibold"
+        className="w-[100%] max-w-[258px] min-h-[30px] py-[5px] px-[9px] bg-[#0095f6] rounded-[3px] mt-3 text-white text-[14px] font-semibold flex items-center justify-center gap-2"
         type="submit"
       >
-        Войти
+        {
+          loading && <Loader style={{width: "20px", padding: "3px", background: "#fff"}}/>
+        }
+        Зарегистрироваться
       </button>
     </form>
   );

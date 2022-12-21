@@ -1,12 +1,7 @@
-import mongoose from "mongoose";
-import { NextApiRequest, NextApiResponse } from "next";
+import {connect} from "mongoose";
 
-const connectDb = async (req: NextApiRequest, res: NextApiResponse) => {
-  try {
-    await mongoose.connect(`${process.env.MONGO_DB}`);
-  } catch (err) {
-   res.status(500).json("Ошибка сервера");
-  }
+const connectDb = async () => {
+  await connect(`${process.env.NEXT_PUBLIC_MONGO_URL}`).then(res => console.log(res)).catch(err => console.log(err));
 };
 
 export default connectDb;

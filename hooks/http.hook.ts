@@ -2,7 +2,6 @@ import React from "react"
 
 export const useHttp = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState<string>("");
 
   const request = React.useCallback(async(
     url: string,
@@ -25,9 +24,9 @@ export const useHttp = () => {
 
       return data;
     } catch(err: any) {
-      setError(err.message);
+      setLoading(false);
     }
   }, []);
 
-  return {loading, request, error};
+  return {loading, request};
 }

@@ -4,3 +4,8 @@ export interface IUser {
   userName: string;
   password: string;
 }
+
+export interface IRegError {
+  isError: boolean;
+  message: string | undefined;
+}
