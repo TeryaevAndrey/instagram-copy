@@ -9,7 +9,7 @@ import Loader from "../Loader/Loader";
 import AuthInput from "./AuthInput";
 
 const LoginForm: FC = () => {
-  const {request, loading, isSuccess} = useHttp();
+  const {request, loading} = useHttp();
 
   const dispatch = useAppDispatch();
   const router = useRouter();
@@ -50,7 +50,9 @@ const LoginForm: FC = () => {
         userName: res.userName
       }));
 
-      if(isSuccess) router.push("/");
+      if(userInfo.token && JSON.parse(localStorage.getItem("userInfo") || "{}").token) {
+        router.push("/");
+      }
 
     } catch(err) {
       console.log(err);
