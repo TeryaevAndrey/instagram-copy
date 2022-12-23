@@ -2,6 +2,7 @@ import React from "react"
 
 export const useHttp = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = React.useState<boolean>(false);
 
   const request = React.useCallback(async(
     url: string,
@@ -10,6 +11,7 @@ export const useHttp = () => {
     headers: any = {}
   ) => {
     setLoading(true);
+    setIsSuccess(false);
 
     try {
       if(body) {
@@ -21,12 +23,15 @@ export const useHttp = () => {
       const data = await res.json();
 
       setLoading(false);
+      
+      setIsSuccess(true);
 
       return data;
     } catch(err: any) {
       setLoading(false);
+      setIsSuccess(false);
     }
   }, []);
 
-  return {loading, request};
+  return {loading, request, isSuccess, setIsSuccess};
 }

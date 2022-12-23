@@ -16,10 +16,10 @@ export const regSlice = createSlice({
   name: "regSlice", 
   initialState,
   reducers: {
-    changeIsError: (state, action: PayloadAction<IRegError>) => {
+    changeError: (state, action: PayloadAction<IRegError>) => {
       state.error = action.payload;
     }
   }
 });
 
-export const {changeIsError} = regSlice.actions;
+export const {changeError} = regSlice.actions;

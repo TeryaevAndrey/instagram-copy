@@ -1,9 +1,6 @@
-import {Schema, model} from "mongoose";
+import {Schema, model, models} from "mongoose";
 
 const userSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId
-  },
   contact: {
     type: String,
     required: true
@@ -22,4 +19,4 @@ const userSchema = new Schema({
   }
 });
 
-export default model("User") || model("User", userSchema);
+export default models.User ||  model("User", userSchema);

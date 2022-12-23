@@ -1,7 +1,10 @@
-import {connect} from "mongoose";
+import {connect, set} from "mongoose";
+import config from "config";
+
+const mongoUrl: string = config.get("mongoUrl");
 
 const connectDb = async () => {
-  await connect(`${process.env.NEXT_PUBLIC_MONGO_URL}`).then(res => console.log(res)).catch(err => console.log(err));
+  await connect(`${mongoUrl}`).then(() => console.log("Success")).catch(err => console.log(err));
 };
 
 export default connectDb;

@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IRegUser {
   contact: string;
   realName: string;
   userName: string;
@@ -8,4 +8,20 @@ export interface IUser {
 export interface IRegError {
   isError: boolean;
   message: string | undefined;
+}
+
+export interface ILoginUser {
+  contact: string;
+  password: string;
+}
+
+export interface ILoginError {
+  isError: boolean;
+  message: string | undefined;
+}
+
+export interface IUserInfo {
+  token: string | undefined;
+  userId: string | undefined;
+  userName: string | undefined;
 }

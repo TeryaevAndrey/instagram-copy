@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { loginSlice } from "./loginSlice";
 import { regSlice } from "./regSlice";
+import { userSlice } from "./userSlice";
 
 export const store = configureStore({
   reducer: {
-    reg: regSlice.reducer
+    reg: regSlice.reducer,
+    login: loginSlice.reducer,
+    user: userSlice.reducer
   }
 });
 

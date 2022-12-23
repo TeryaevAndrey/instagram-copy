@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import Posts from "../components/Posts/Posts";
 import ProfileBlock from "../components/ProfileBlock/ProfileBlock";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Stories from "../components/Stories/Stories";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { setUserInfo } from "../store/userSlice";
 
 const Home = () => {
   return (
