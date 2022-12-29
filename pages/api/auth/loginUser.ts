@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import connectDb from "../../middleware/mongoDb";
-import User from "../../models/User";
-import { ILoginUser } from "../../types";
+import connectDb from "../../../middleware/mongoDb";
+import User from "../../../models/User";
+import { ILoginUser } from "../../../types";
 import bcrypt from "bcrypt";
 import jsonwebtoken from "jsonwebtoken";
 import config from "config";
@@ -35,6 +35,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             expiresIn: "7d",
           }
         );
+
+        await user.updateOne({contact}, {$set: {online: true}});
 
         return res.status(200).json({
           message: "Успешно!",

@@ -2,13 +2,39 @@ import Image from "next/image";
 import React, { FC } from "react";
 import BurgerItem from "./BurgerItem";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setUserInfo } from "../../../store/userSlice";
+import { useRouter } from "next/router";
+import { useHttp } from "../../../hooks/http.hook";
 
 interface ISidebarBurger {
   style?: object;
 }
 
 const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  const {request} = useHttp();
+  const userInfo = useAppSelector(state => state.user.userInfo);
   const [isShowMenu, setIsShowMenu] = React.useState<boolean>(false);
+
+  const logout = async () => {
+    try { 
+      localStorage.removeItem("userInfo");
+
+      dispatch(setUserInfo({
+        token: undefined,
+        userId: undefined,
+        userName: undefined
+      }));
+
+      await request("/api/auth/logout", "PATCH", userInfo.userId);
+  
+      router.push("/auth/login");
+    } catch(err) {
+      alert(`Ошибка ${err}`);
+    }
+  }
 
   return (
     <div className="absolute bottom-[40px] ml-3">
@@ -35,7 +61,7 @@ const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
             </div>
             <div className="flex flex-col gap-[1px] bg-[#ccc]">
               <BurgerItem Tag={"div"} title="Переключение между аккаунтами" />
-              <BurgerItem Tag={"div"} title="Выйти" />
+              <BurgerItem onClick={logout} Tag={"div"} title="Выйти" />
             </div>
           </div>
         )}

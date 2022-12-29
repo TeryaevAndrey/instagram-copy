@@ -46,7 +46,7 @@ const RegForm: FC = () => {
           password,
         };
 
-        await request("/api/regUser", "POST", readyData);
+        await request("/api/auth/regUser", "POST", readyData);
 
         dispatch(
           changeError({

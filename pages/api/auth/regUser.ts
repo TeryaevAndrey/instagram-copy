@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
-import connectDb from "../../middleware/mongoDb";
-import User from "../../models/User";
-import { IRegUser } from "../../types";
+import connectDb from "../../../middleware/mongoDb";
+import User from "../../../models/User";
+import { IRegUser } from "../../../types";
 
 connectDb();
 
@@ -18,7 +18,8 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
           contact,
           realName, 
           userName,
-          password: passwordHash
+          password: passwordHash,
+          online: false
         });
 
         await user.save();

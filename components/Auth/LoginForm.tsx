@@ -34,7 +34,7 @@ const LoginForm: FC = () => {
         password,
       };
 
-      const res = await request("/api/loginUser", "POST", readyData);
+      const res = await request("/api/auth/loginUser", "POST", readyData);
       
       const userInfo: IUserInfo = {
         token: res.token, 
