@@ -6,10 +6,10 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
         try {
             const {_id} = req.body;
 
-            const user = await User.findById(_id);
+            const user = await User.findById({_id});
 
             if(user) {
-                await user.updateOne({_id}, {$set: {online: false}});
+                await user.updateOne({$set: {online: false}});
 
                 return res.json({message: "Успешно"});
             } else {

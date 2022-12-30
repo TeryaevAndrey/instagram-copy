@@ -20,6 +20,8 @@ const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
 
   const logout = async () => {
     try { 
+      await request("/api/auth/logout", "PATCH", {_id: userInfo.userId});
+
       localStorage.removeItem("userInfo");
 
       dispatch(setUserInfo({
@@ -27,8 +29,6 @@ const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
         userId: undefined,
         userName: undefined
       }));
-
-      await request("/api/auth/logout", "PATCH", userInfo.userId);
   
       router.push("/auth/login");
     } catch(err) {

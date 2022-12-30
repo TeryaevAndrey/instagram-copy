@@ -36,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           }
         );
 
-        await user.updateOne({contact}, {$set: {online: true}});
+        await user.updateOne({$set: {online: true}});
 
         return res.status(200).json({
           message: "Успешно!",
