@@ -37,7 +37,7 @@ const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
   }
 
   return (
-    <div className="absolute bottom-[40px] ml-3">
+    <div className="hidden md:flex absolute bottom-[40px] ml-3">
       <div className="relative">
         {isShowMenu && (
           <div className="flex flex-col absolute bottom-[40px] gap-1 bg-[#efefef] max-w-[220px] rounded-[3px]">
@@ -72,7 +72,7 @@ const SidebarBurger: FC<ISidebarBurger> = ({ style }) => {
           style={style}
         >
           <Image src="/burger.svg" alt="burger" width="24" height="24" />
-          <span className="text-[16px] text-[#262626]">Еще</span>
+          <span className="text-[16px] text-[#262626] hidden min-[1100px]:flex">Еще</span>
         </div>
       </div>
     </div>

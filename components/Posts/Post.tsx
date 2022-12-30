@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import PostProfile from "./PostProfile";
 
 const Post: FC = () => (
-  <div className="post flex flex-col bg-[#fff] rounded-[8px] w-[100%]">
+  <div className="post flex flex-col bg-[#fff] rounded-[8px] w-[100%] relative z-[-1]">
     <div className="flex justify-between items-center py-4 px-5">
       <PostProfile />
       <Image

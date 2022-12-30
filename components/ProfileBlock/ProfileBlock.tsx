@@ -5,7 +5,7 @@ import RecProfileList from './RecProfileList';
 
 const ProfileBlock: FC = () => {
   return (
-    <div className="w-[320px] mt-7 px-3">
+    <div className="w-[320px] mt-7 px-3 hidden min-[1100px]:block">
       <ProfileLink />
       <div className="flex justify-between items-center py-3">
         <p className="text-[14px] font-semibold text-[#8E8E8E]">Рекомендации для вас</p>

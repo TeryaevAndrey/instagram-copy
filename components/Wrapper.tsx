@@ -25,8 +25,6 @@ const Wrapper: FC<IWrapper> = ({children}) => {
 
     if(!userInfo.token && !data.token) {
       router.push("/auth/login");
-    } else {
-      router.push("/");
     }
   }, [dispatch, userInfo.token]);
 
