@@ -115,20 +115,12 @@ input {
   transform: scale(1.1);
 }
 
-.stories-block {
-  border: 1px solid #ccc;
-}
-
 .stories-item-wrapper {
   background: linear-gradient(90deg, rgba(123,18,187,1) 32%, rgba(218,14,113,1) 72%);
 }
 
 .stories-item-wrapper.inactive {
   background: #ccc;
-}
-
-.post {
-  border: 1px solid #ccc;
 }
 
 .post-img {
