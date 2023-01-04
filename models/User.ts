@@ -20,6 +20,18 @@ const userSchema = new Schema({
   online: {
     type: Boolean,
     required: true
+  },
+  publications: {
+    type: Array,
+    required: false
+  },
+  followers: {
+    type: Array,
+    required: false
+  },
+  following: {
+    type: Array,
+    required: false
   }
 });
 

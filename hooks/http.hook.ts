@@ -7,7 +7,7 @@ export const useHttp = () => {
   const request = React.useCallback(async(
     url: string,
     method: string = "GET",
-    body: any,
+    body?: any,
     headers: any = {}
   ) => {
     setLoading(true);

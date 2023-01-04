@@ -1,5 +1,8 @@
+import React from "react";
 import Image from "next/image";
 import { FC } from "react";
+import { useAppSelector } from "../../store/hooks";
+import { useRouter } from "next/router";
 
 const ProfileHeader: FC = () => {
   return (
@@ -10,7 +13,7 @@ const ProfileHeader: FC = () => {
       <div className="flex flex-col gap-5">
         <div className="flex items-center gap-7">
           <span className="text-[28px] text-[#262626] font-light">
-            _Anonym_
+            Test
           </span>
           <button className="edit-btn text-[14px] text-[#262626] font-semibold w-[180px] min-h-[30px] p-1 rounded-[3px]">
             Редактировать профиль
