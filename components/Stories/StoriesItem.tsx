@@ -1,11 +1,15 @@
 import Image from "next/image";
 import React, { FC } from "react";
 
-const StoriesItem: FC = () => {
+interface IStoriesItem {
+  style?: object
+}
+
+const StoriesItem: FC<IStoriesItem> = ({style}) => {
   return (
     <div className="cursor-pointer">
       <div className="stories-item-wrapper flex justify-center items-center w-[60px] h-[60px] rounded-[50%]">
-        <div className="bg-[#fff] w-[56px] h-[56px] p-[1px] rounded-[50%]">
+        <div className="bg-[#fff] w-[56px] h-[56px] p-[1px] rounded-[50%]" style={style}>
           <Image
             className="rounded-[50%]"
             src="/avatar.png"

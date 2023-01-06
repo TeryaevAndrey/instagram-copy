@@ -8,7 +8,7 @@ const ProfileHeader: FC = () => {
 
   return (
     <div className="flex items-center gap-20">
-      <div className="relative w-[150px] h-[150px] rounded-[100%] overflow-hidden">
+      <div className="relative w-[150px] h-[150px] rounded-[100%] overflow-hidden cursor-pointer">
         <Image src="/avatar.png" alt="avatar" fill={true} />
       </div>
       <div className="flex flex-col gap-5">
@@ -28,26 +28,23 @@ const ProfileHeader: FC = () => {
           />
         </div>
         <div className="flex items-center gap-8">
-          <p className="profile-header-text">
+          <p className="profile-header-text cursor-pointer">
             <span className="profile-header-number">{userInfo.publications ? userInfo.publications.length : 0}</span>
             публикаций
           </p>
-          <p className="profile-header-text">
+          <p className="profile-header-text cursor-pointer">
             <span className="profile-header-number">{userInfo.followers ? userInfo.followers.length : 0}</span>
             подписчиков
           </p>
-          <p className="profile-header-text">
+          <p className="profile-header-text cursor-pointer">
             <span className="profile-header-number">{userInfo.following ? userInfo.following.length : 0}</span>
             подписок
           </p>
         </div>
         <div className="flex flex-col">
-          <p className="profile-header-text font-semibold">Anonym</p>
+          <p className="profile-header-text font-semibold">{userInfo.realName}</p>
           <p className="profile-header-text">
-            Lorem, ipsum dolor.
-          </p>
-          <p className="profile-header-text">
-            Lorem, ipsum.
+            {userInfo.aboutMe}
           </p>
         </div>
       </div>

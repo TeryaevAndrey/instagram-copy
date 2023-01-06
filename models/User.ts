@@ -32,6 +32,10 @@ const userSchema = new Schema({
   following: {
     type: Array,
     required: false
+  },
+  aboutMe: {
+    type: String,
+    required: false
   }
 });
 

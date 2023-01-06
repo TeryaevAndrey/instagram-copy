@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { FC } from "react";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import ProfilePosts from "../../components/Profile/ProfilePosts";
-import ProfileStories from "../../components/Profile/ProfileStories";
+import ProfileStories from "../../components/Profile/stories/ProfileStories";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { User } from "../../types";
 import Head from "next/head";
@@ -54,7 +54,7 @@ const Profile: FC<IProfile> = ({ data }) => {
         <Sidebar />
         <div className="w-[80%] ml-auto">
           <div className="flex justify-center items-start gap-5 mx-auto mt-7">
-            <div className="flex flex-col">
+            <div className="flex flex-col max-w-[800px] w-[100%]">
               <ProfileHeader />
               <ProfileStories />
               <ProfilePosts />
