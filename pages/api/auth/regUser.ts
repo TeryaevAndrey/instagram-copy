@@ -19,7 +19,7 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
           realName, 
           userName,
           password: passwordHash,
-          online: false
+          online: false,
         });
 
         await user.save();

@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { FC } from "react";
 import { useAppSelector } from "../../store/hooks";
-import { useRouter } from "next/router";
 
 const ProfileHeader: FC = () => {
+  const userInfo = useAppSelector(state => state.userInfo.userInfo);
+
   return (
     <div className="flex items-center gap-20">
       <div className="relative w-[150px] h-[150px] rounded-[100%] overflow-hidden">
@@ -13,7 +14,7 @@ const ProfileHeader: FC = () => {
       <div className="flex flex-col gap-5">
         <div className="flex items-center gap-7">
           <span className="text-[28px] text-[#262626] font-light">
-            Test
+            {userInfo.userName}
           </span>
           <button className="edit-btn text-[14px] text-[#262626] font-semibold w-[180px] min-h-[30px] p-1 rounded-[3px]">
             Редактировать профиль
@@ -28,15 +29,15 @@ const ProfileHeader: FC = () => {
         </div>
         <div className="flex items-center gap-8">
           <p className="profile-header-text">
-            <span className="profile-header-number">10</span>
+            <span className="profile-header-number">{userInfo.publications ? userInfo.publications.length : 0}</span>
             публикаций
           </p>
           <p className="profile-header-text">
-            <span className="profile-header-number">10</span>
+            <span className="profile-header-number">{userInfo.followers ? userInfo.followers.length : 0}</span>
             подписчиков
           </p>
           <p className="profile-header-text">
-            <span className="profile-header-number">10</span>
+            <span className="profile-header-number">{userInfo.following ? userInfo.following.length : 0}</span>
             подписок
           </p>
         </div>

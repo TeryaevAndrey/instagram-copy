@@ -6,7 +6,6 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
     try {
       const {id} = req.query;
 
-
       const user = await User.findById({_id: id});
   
       res.json(JSON.stringify(user));

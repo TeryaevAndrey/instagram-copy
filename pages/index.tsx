@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import Header from "../components/Header/Header";
 import Posts from "../components/Posts/Posts";
@@ -7,6 +8,11 @@ import Stories from "../components/Stories/Stories";
 
 const Home = () => {
   return (
+    <>
+    <Head>
+    <link rel="icon" href="/insta-logo-head.svg" />
+      <title>Instagram</title>
+    </Head>
     <div className="flex items-start">
       <Sidebar />
       <div className="w-[100%] md:w-[80%] ml-auto">
@@ -20,6 +26,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

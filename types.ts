@@ -1,3 +1,15 @@
+export interface User {
+  contact: string | undefined;
+  realName: string | undefined;
+  userName: string | undefined;
+  online: boolean | undefined;
+  publications: [] | undefined;
+  followers: [] | undefined;
+  following: [] | undefined;
+  password?: string | null;
+  aboutMe?: string | undefined;
+}
+
 export interface IRegUser {
   contact: string;
   realName: string;
